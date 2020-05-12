@@ -42,14 +42,14 @@ using namespace std;
 struct TestParameters
 {
 #ifdef LEO_HAS_FF16
-    unsigned original_count = 1000; // under 65536
-    unsigned recovery_count = 100; // under 65536 - original_count
+    unsigned original_count = 1024; // under 65536
+    unsigned recovery_count = 1024; // under 65536 - original_count
 #else
     unsigned original_count = 100; // under 65536
     unsigned recovery_count = 10; // under 65536 - original_count
 #endif
-    unsigned buffer_bytes = 64000; // multiple of 64 bytes
-    unsigned loss_count = 32768; // some fraction of original_count
+    unsigned buffer_bytes = 640; // multiple of 64 bytes
+    unsigned loss_count = 1024; // some fraction of original_count
     unsigned seed = 2;
 };
 
@@ -439,6 +439,19 @@ static bool Benchmark(const TestParameters& params)
             LEO_DEBUG_BREAK;
             return false;
         }
+
+//        for (unsigned i = 0; i < encode_work_count; ++i)
+//        {
+//            // do we have orig data in encoded
+//                if (!CheckPacket(encode_work_data[i], params.buffer_bytes))
+//                {
+//                    cout << "Error: Can't find orig data in encode data" << endl;
+//                } else {
+//                    cout << "Yay: Found orig data in encode data" << endl;
+//                }
+//        }
+        //return 0;
+
 
         // Lose random original data:
 

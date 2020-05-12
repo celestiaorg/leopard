@@ -428,6 +428,17 @@ static bool Benchmark(const TestParameters& params)
         );
         t_leo_encode.EndCall();
 
+//        for (unsigned i = 0; i < params.original_count; ++i)
+//        {
+//            // do we have orig data in encoded
+//                if (!CheckPacket(encode_work_data[i], params.buffer_bytes))
+//                {
+//                    cout << "Error: Can't find orig data in encode data" << endl;
+//                    LEO_DEBUG_BREAK;
+//                    return false;
+//                }
+//        }
+
         if (encodeResult != Leopard_Success)
         {
             if (encodeResult == Leopard_TooMuchData)

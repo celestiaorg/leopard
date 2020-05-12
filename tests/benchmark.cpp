@@ -42,14 +42,14 @@ using namespace std;
 struct TestParameters
 {
 #ifdef LEO_HAS_FF16
-    unsigned original_count = 1000; // under 65536
-    unsigned recovery_count = 100; // under 65536 - original_count
+    unsigned original_count = 1024; // under 65536
+    unsigned recovery_count = 1024; // under 65536 - original_count
 #else
     unsigned original_count = 100; // under 65536
     unsigned recovery_count = 10; // under 65536 - original_count
 #endif
-    unsigned buffer_bytes = 64000; // multiple of 64 bytes
-    unsigned loss_count = 32768; // some fraction of original_count
+    unsigned buffer_bytes = 64; // multiple of 64 bytes
+    unsigned loss_count = 1024; // some fraction of original_count
     unsigned seed = 2;
 };
 
@@ -400,11 +400,11 @@ static bool Benchmark(const TestParameters& params)
 
         t_mem_alloc.BeginCall();
         for (unsigned i = 0, count = params.original_count; i < count; ++i)
-            original_data[i] = leopard::SIMDSafeAllocate(params.buffer_bytes);
+            original_data[i] =(uint8_t*)malloc(params.buffer_bytes);
         for (unsigned i = 0, count = encode_work_count; i < count; ++i)
-            encode_work_data[i] = leopard::SIMDSafeAllocate(params.buffer_bytes);
+            encode_work_data[i] = (uint8_t*)malloc(params.buffer_bytes);
         for (unsigned i = 0, count = decode_work_count; i < count; ++i)
-            decode_work_data[i] = leopard::SIMDSafeAllocate(params.buffer_bytes);
+            decode_work_data[i] = (uint8_t*)malloc(params.buffer_bytes);
         t_mem_alloc.EndCall();
 
         // Generate data:
@@ -448,7 +448,7 @@ static bool Benchmark(const TestParameters& params)
         for (unsigned i = 0, count = params.loss_count; i < count; ++i)
         {
             const unsigned loss_index = original_losses[i];
-            leopard::SIMDSafeFree(original_data[loss_index]);
+            free(original_data[loss_index]);
             original_data[loss_index] = nullptr;
         }
 
@@ -462,7 +462,7 @@ static bool Benchmark(const TestParameters& params)
         for (unsigned i = 0, count = recovery_loss_count; i < count; ++i)
         {
             const unsigned loss_index = recovery_losses[i];
-            leopard::SIMDSafeFree(encode_work_data[loss_index]);
+            free(encode_work_data[loss_index]);
             encode_work_data[loss_index] = nullptr;
         }
 
@@ -503,11 +503,11 @@ static bool Benchmark(const TestParameters& params)
 
         t_mem_free.BeginCall();
         for (unsigned i = 0, count = params.original_count; i < count; ++i)
-            leopard::SIMDSafeFree(original_data[i]);
+            free(original_data[i]);
         for (unsigned i = 0, count = encode_work_count; i < count; ++i)
-            leopard::SIMDSafeFree(encode_work_data[i]);
+            free(encode_work_data[i]);
         for (unsigned i = 0, count = decode_work_count; i < count; ++i)
-            leopard::SIMDSafeFree(decode_work_data[i]);
+            free(decode_work_data[i]);
         t_mem_free.EndCall();
     }
 

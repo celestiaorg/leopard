@@ -469,6 +469,9 @@ static LEO_FORCE_INLINE uint8_t* SIMDSafeAllocate(size_t size)
     unsigned offset = (unsigned)((uintptr_t)data % kAlignmentBytes);
     data += kAlignmentBytes - offset;
     data[-1] = (uint8_t)offset;
+    // explicitly nil data:
+    //memset (data, 0, sizeof data);
+
     return data;
 }
 

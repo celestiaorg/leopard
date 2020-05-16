@@ -99,7 +99,7 @@ LEO_EXPORT unsigned leo_encode_work_count(
         return recovery_count;
     if (recovery_count == 1)
         return 1;
-    if (original_count == recovery_count)
+    if (original_count == recovery_count && leopard::NextPow2(original_count) == original_count)
         return leopard::NextPow2(recovery_count);
     return leopard::NextPow2(recovery_count) * 2;
 }

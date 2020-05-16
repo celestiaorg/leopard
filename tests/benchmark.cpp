@@ -448,12 +448,12 @@ static bool Benchmark(const TestParameters& params)
                 //cout << hex << setfill('0') << setw(2)  << encode_work_data[i][j] << " ";
             }
             //cout <<  endl;
-            bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
-            if (res == 0) {
-                cout << "All zero! at idx " << i <<  endl;
-            } else {
-                cout << "Non zero! " << i <<  endl;
-            }
+//            bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
+//            if (res == 0) {
+//                cout << "All zero! at idx " << i <<  endl;
+//            } else {
+//                cout << "Non zero! " << i <<  endl;
+//            }
         }
         cout << endl;
 
@@ -599,8 +599,6 @@ int main(int argc, char **argv)
 
     if (!Benchmark(params))
         goto Failed;
-    return 0;
-
 #if 1
     static const unsigned kMaxLargeRandomData = 32768;
     static const unsigned kMaxSmallRandomData = 128;
@@ -618,7 +616,6 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
-            return 0;
         }
         // Small:
         {
@@ -630,7 +627,6 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
-            return 0;
         }
     }
 #endif
@@ -648,7 +644,6 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
-            return 0;
         }
     }
 #endif

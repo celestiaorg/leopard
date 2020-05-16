@@ -34,6 +34,7 @@
 #include <memory>
 #include <vector>
 #include <iostream>
+#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -439,6 +440,22 @@ static bool Benchmark(const TestParameters& params)
             LEO_DEBUG_BREAK;
             return false;
         }
+        uint8_t testblock [params.buffer_bytes];
+        memset (testblock, 0, sizeof testblock);
+        for (int i = 0; i < encode_work_count; ++i){
+            const int siz_ar = sizeof(encode_work_data[i]) / sizeof(uint8_t);
+            for (int j = 0; j < siz_ar; ++j) {
+                //cout << hex << setfill('0') << setw(2)  << encode_work_data[i][j] << " ";
+            }
+            //cout <<  endl;
+            bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
+            if (res == 0) {
+                cout << "All zero! at idx " << i <<  endl;
+            } else {
+                cout << "Non zero! " << i <<  endl;
+            }
+        }
+        cout << endl;
 
 //        for (unsigned i = 0; i < encode_work_count; ++i)
 //        {
@@ -511,6 +528,7 @@ static bool Benchmark(const TestParameters& params)
                 }
             }
         }
+        cout << "SUCCESS" << endl;
 
         // Free memory:
 
@@ -522,6 +540,7 @@ static bool Benchmark(const TestParameters& params)
         for (unsigned i = 0, count = decode_work_count; i < count; ++i)
             leopard::SIMDSafeFree(decode_work_data[i]);
         t_mem_free.EndCall();
+        return true;
     }
 
 #if 0
@@ -580,6 +599,7 @@ int main(int argc, char **argv)
 
     if (!Benchmark(params))
         goto Failed;
+    return 0;
 
 #if 1
     static const unsigned kMaxLargeRandomData = 32768;
@@ -598,6 +618,7 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
+            return 0;
         }
         // Small:
         {
@@ -609,6 +630,7 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
+            return 0;
         }
     }
 #endif
@@ -626,6 +648,7 @@ int main(int argc, char **argv)
 
             if (!Benchmark(params))
                 goto Failed;
+            return 0;
         }
     }
 #endif

@@ -448,12 +448,12 @@ static bool Benchmark(const TestParameters& params)
                 //cout << hex << setfill('0') << setw(2)  << encode_work_data[i][j] << " ";
             }
             //cout <<  endl;
-//            bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
-//            if (res == 0) {
-//                cout << "All zero! at idx " << i <<  endl;
-//            } else {
-//                cout << "Non zero! " << i <<  endl;
-//            }
+            //bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
+            //if (res == 0) {
+            //    cout << "All zero! at idx " << i <<  endl;
+            // } else {
+                //cout << "Non zero! " << i <<  endl;
+            // }
         }
         cout << endl;
 
@@ -467,7 +467,7 @@ static bool Benchmark(const TestParameters& params)
 //                    cout << "Yay: Found orig data in encode data" << endl;
 //                }
 //        }
-        //return 0;
+
 
 
         // Lose random original data:
@@ -525,6 +525,12 @@ static bool Benchmark(const TestParameters& params)
                     cout << "Error: Data was corrupted" << endl;
                     LEO_DEBUG_BREAK;
                     return false;
+                }
+                cout << "Same as orig data:\t" << i <<  endl;
+            } else { // orig data was not lost
+                bool res = std::memcmp(original_data[i], decode_work_data[i], params.buffer_bytes);
+                if (res != 0) {
+                    cout << "Different data:\t\t" << i <<  endl;
                 }
             }
         }

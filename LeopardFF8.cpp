@@ -1824,8 +1824,12 @@ void ReedSolomonDecode(
 
     ffe_t error_locations[kOrder] = {};
     for (unsigned i = 0; i < recovery_count; ++i)
-        if (!recovery[i])
+        if (!recovery[i]) {
             error_locations[i] = 1;
+#ifdef LEO_ERROR_BITFIELD_OPT
+            error_bits.Set(i);
+#endif // LEO_ERROR_BITFIELD_OPT
+        }
     for (unsigned i = recovery_count; i < m; ++i)
         error_locations[i] = 1;
     for (unsigned i = 0; i < original_count; ++i)
@@ -1909,6 +1913,15 @@ void ReedSolomonDecode(
 #endif
 
     // Reveal erasures
+    //
+    //  Original = -ErrLocator * FFT( Derivative( IFFT( ErrLocator * ReceivedData ) ) )
+    //  mul_mem(x, y, log_m, ) equals x[] = y[] * log_m
+    //
+    // mem layout: [Recovery Data (Power of Two = M)] [Original Data (K)] [Zero Padding out to N]
+    // Hence, reveal recovery erasures first:
+    for (unsigned i = 0; i < recovery_count; ++i)
+        if (!recovery[i])
+            mul_mem(work[i+original_count], work[i], kModulus - error_locations[i], buffer_bytes);
 
     for (unsigned i = 0; i < original_count; ++i)
         if (!original[i])

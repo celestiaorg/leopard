@@ -34,7 +34,6 @@
 #include <memory>
 #include <vector>
 #include <iostream>
-#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -43,14 +42,14 @@ using namespace std;
 struct TestParameters
 {
 #ifdef LEO_HAS_FF16
-    unsigned original_count = 1024; // under 65536
-    unsigned recovery_count = 1024; // under 65536 - original_count
+    unsigned original_count = 1000; // under 65536
+    unsigned recovery_count = 100; // under 65536 - original_count
 #else
     unsigned original_count = 100; // under 65536
     unsigned recovery_count = 10; // under 65536 - original_count
 #endif
-    unsigned buffer_bytes = 640; // multiple of 64 bytes
-    unsigned loss_count = 1024; // some fraction of original_count
+    unsigned buffer_bytes = 64000; // multiple of 64 bytes
+    unsigned loss_count = 32768; // some fraction of original_count
     unsigned seed = 2;
 };
 
@@ -440,35 +439,6 @@ static bool Benchmark(const TestParameters& params)
             LEO_DEBUG_BREAK;
             return false;
         }
-        uint8_t testblock [params.buffer_bytes];
-        memset (testblock, 0, sizeof testblock);
-        for (int i = 0; i < encode_work_count; ++i){
-            const int siz_ar = sizeof(encode_work_data[i]) / sizeof(uint8_t);
-            for (int j = 0; j < siz_ar; ++j) {
-                //cout << hex << setfill('0') << setw(2)  << encode_work_data[i][j] << " ";
-            }
-            //cout <<  endl;
-            //bool res = std::memcmp(testblock, encode_work_data[i], params.buffer_bytes);
-            //if (res == 0) {
-            //    cout << "All zero! at idx " << i <<  endl;
-            // } else {
-                //cout << "Non zero! " << i <<  endl;
-            // }
-        }
-        cout << endl;
-
-//        for (unsigned i = 0; i < encode_work_count; ++i)
-//        {
-//            // do we have orig data in encoded
-//                if (!CheckPacket(encode_work_data[i], params.buffer_bytes))
-//                {
-//                    cout << "Error: Can't find orig data in encode data" << endl;
-//                } else {
-//                    cout << "Yay: Found orig data in encode data" << endl;
-//                }
-//        }
-
-
 
         // Lose random original data:
 
@@ -526,15 +496,8 @@ static bool Benchmark(const TestParameters& params)
                     LEO_DEBUG_BREAK;
                     return false;
                 }
-                cout << "Same as orig data:\t" << i <<  endl;
-            } else { // orig data was not lost
-                bool res = std::memcmp(original_data[i], decode_work_data[i], params.buffer_bytes);
-                if (res != 0) {
-                    cout << "Different data:\t\t" << i <<  endl;
-                }
             }
         }
-        cout << "SUCCESS" << endl;
 
         // Free memory:
 
@@ -546,7 +509,6 @@ static bool Benchmark(const TestParameters& params)
         for (unsigned i = 0, count = decode_work_count; i < count; ++i)
             leopard::SIMDSafeFree(decode_work_data[i]);
         t_mem_free.EndCall();
-        return true;
     }
 
 #if 0
@@ -605,6 +567,7 @@ int main(int argc, char **argv)
 
     if (!Benchmark(params))
         goto Failed;
+
 #if 1
     static const unsigned kMaxLargeRandomData = 32768;
     static const unsigned kMaxSmallRandomData = 128;

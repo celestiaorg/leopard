@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="leopard"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="experiment_leopard">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/experiment_leopard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 experiment_leopard"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="experiment_leopard/fast">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/experiment_leopard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 experiment_leopard/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bench_leopard">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/bench_leopard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 bench_leopard"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bench_leopard/fast">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/bench_leopard" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 bench_leopard/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libleopard">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/liblibleopard.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 libleopard"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libleopard/fast">
+				<Option output="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/liblibleopard.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 libleopard/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardCommon.cpp">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardCommon.h">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardFF16.cpp">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardFF16.h">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardFF8.cpp">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/LeopardFF8.h">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/leopard.cpp">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/leopard.h">
+			<Option target="libleopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/tests/benchmark.cpp">
+			<Option target="bench_leopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/tests/experiments.cpp">
+			<Option target="experiment_leopard"/>
+		</Unit>
+		<Unit filename="/Users/ismail/IdeaProjects/lazy-ledger/go-leopard/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

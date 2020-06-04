@@ -1821,9 +1821,10 @@ void ReedSolomonDecode(
 #ifdef LEO_ERROR_BITFIELD_OPT
     ErrorBitfield error_bits;
 #endif // LEO_ERROR_BITFIELD_OPT
+
     unsigned lost_recovery_count = 0;
     ffe_t error_locations[kOrder] = {};
-    for (unsigned i = 0; i < recovery_count; ++i)
+    for (unsigned i = 0; i < recovery_count; ++i) {
         if (!recovery[i]) {
             error_locations[i] = 1;
 #ifdef LEO_ERROR_BITFIELD_OPT
@@ -1831,6 +1832,7 @@ void ReedSolomonDecode(
             lost_recovery_count++;
 #endif // LEO_ERROR_BITFIELD_OPT
         }
+    }
     for (unsigned i = recovery_count; i < m; ++i)
         error_locations[i] = 1;
     for (unsigned i = 0; i < original_count; ++i)

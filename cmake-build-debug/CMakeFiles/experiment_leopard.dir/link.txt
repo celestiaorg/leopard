@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -march=native -Wall -Wextra -g -O0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/experiment_leopard.dir/tests/experiments.cpp.o  -o experiment_leopard 

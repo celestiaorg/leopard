@@ -1665,10 +1665,17 @@ void ReedSolomonDecode(
     ErrorBitfield error_bits;
 #endif // LEO_ERROR_BITFIELD_OPT
 
+    unsigned lost_recovery_count = 0;
     ffe_t error_locations[kOrder] = {};
-    for (unsigned i = 0; i < recovery_count; ++i)
-        if (!recovery[i])
+    for (unsigned i = 0; i < recovery_count; ++i) {
+        if (!recovery[i]) {
             error_locations[i] = 1;
+#ifdef LEO_ERROR_BITFIELD_OPT
+            error_bits.Set(i);
+            lost_recovery_count++;
+#endif // LEO_ERROR_BITFIELD_OPT
+        }
+    }
     for (unsigned i = recovery_count; i < m; ++i)
         error_locations[i] = 1;
     for (unsigned i = 0; i < original_count; ++i)
@@ -1768,10 +1775,41 @@ void ReedSolomonDecode(
 #endif
 
     // Reveal erasures
+    //
+    //  Original = -ErrLocator * FFT( Derivative( IFFT( ErrLocator * ReceivedData ) ) )
+    //  mul_mem(x, y, log_m, ) equals x[] = y[] * log_m
+    //
+    // mem layout: [Recovery Data (Power of Two = M)] [Original Data (K)] [Zero Padding out to N]
+    // Hence, reveal recovery erasures first and store the recovered chunks in a temp array
+    // later we copy the results into
+    std::vector<uint8_t*> tmp_recovery(lost_recovery_count);
+    if (lost_recovery_count > 0) {
+        for (unsigned i = 0, count = lost_recovery_count; i < count; ++i)
+            tmp_recovery[i] = leopard::SIMDSafeAllocate(buffer_bytes);
+        unsigned recovered_idx = 0;
+        for (unsigned i = 0; i < recovery_count; ++i) {
+            if (!recovery[i]) {
+                mul_mem(tmp_recovery[recovered_idx], work[i], kModulus - error_locations[i], buffer_bytes);
+                recovered_idx++;
+            }
+        }
+    }
 
-    for (unsigned i = 0; i < original_count; ++i)
+    for (unsigned i = 0; i < original_count; ++i) {
         if (!original[i])
             mul_mem(work[i], work[i + m], kModulus - error_locations[i + m], buffer_bytes);
+    }
+
+    if (lost_recovery_count > 0) {
+        unsigned recovered_idx = 0;
+        for (unsigned i = 0; i < recovery_count; ++i) {
+            if (!recovery[i]) {
+                memcpy(work[i + original_count], tmp_recovery[recovered_idx], buffer_bytes);
+                recovered_idx++;
+            }
+        }
+    }
+
 }
 
 

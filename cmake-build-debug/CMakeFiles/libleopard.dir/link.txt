@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc liblibleopard.a  CMakeFiles/libleopard.dir/leopard.cpp.o CMakeFiles/libleopard.dir/LeopardCommon.cpp.o CMakeFiles/libleopard.dir/LeopardFF16.cpp.o CMakeFiles/libleopard.dir/LeopardFF8.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib liblibleopard.a

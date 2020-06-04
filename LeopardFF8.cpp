@@ -1905,7 +1905,7 @@ void ReedSolomonDecode(
 
     // work <- FFT(work, n, 0) truncated to m + original_count
 
-    const unsigned output_count = m + original_count + recovery_count;
+    const unsigned output_count = m + original_count;
 
 #ifdef LEO_ERROR_BITFIELD_OPT
     FFT_DIT_ErrorBits(buffer_bytes, work, output_count, n, FFTSkew - 1, error_bits);

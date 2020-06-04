@@ -99,8 +99,9 @@ LEO_EXPORT unsigned leo_encode_work_count(
         return recovery_count;
     if (recovery_count == 1)
         return 1;
-//    if (original_count == recovery_count && original_count == leopard::NextPow2(original_count))
-//        return leopard::NextPow2(recovery_count);
+    // do not require double the data for our purposes (orig == recover == some power of 2)
+    if (original_count == recovery_count && original_count == leopard::NextPow2(original_count))
+        return leopard::NextPow2(recovery_count);
     return leopard::NextPow2(recovery_count) * 2;
 }
 
@@ -164,7 +165,8 @@ LEO_EXPORT LeopardResult leo_encode(
     const unsigned m = leopard::NextPow2(recovery_count);
     const unsigned n = leopard::NextPow2(m + original_count);
 
-    if (work_count != m * 2) /*&& !(work_count < 2*recovery_count && work_count == m))*/
+    // do not require double the work data
+    if ((work_count != m * 2) && !(work_count < 2*recovery_count && work_count == m))
         return Leopard_InvalidCounts;
 
 #ifdef LEO_HAS_FF8

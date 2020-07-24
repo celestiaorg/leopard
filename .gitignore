@@ -12,5 +12,4 @@ msvc/LHC_RS.vcxproj.user
 *.iobj
 *.ipdb
 *.vspx
-.idea/modules.xml
-.idea/vcs.xml
+.idea/*

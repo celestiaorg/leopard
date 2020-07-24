@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -march=native -Wall -Wextra -g -O0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/bench_leopard.dir/tests/benchmark.cpp.o  -o bench_leopard  liblibleopard.a 

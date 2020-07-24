@@ -119,3 +119,5 @@ add_executable(bench_leopard ${BENCH_SOURCE_FILES})
 target_link_libraries(bench_leopard libleopard)
 
 add_executable(experiment_leopard ${EXPERIMENT_SOURCE_FILES})
+
+INSTALL(TARGETS libleopard DESTINATION lib)
